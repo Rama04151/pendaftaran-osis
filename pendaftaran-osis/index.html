@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pendaftaran Ketua & Wakil Ketua OSIS | SMAN 3 Tebas</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            padding: 25px 15px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #0d47a1;
+            font-size: 25px;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-top: 7px;
+            line-height: 1.5;
+        }
+
+        .section {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #1976d2;
+            color: #0d47a1;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #1976d2;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .checkbox {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-top: 20px;
+            font-weight: normal;
+            line-height: 1.5;
+        }
+
+        .checkbox input {
+            width: auto;
+            margin-top: 4px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #0d47a1;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #083578;
+        }
+
+        button:disabled {
+            background: #888;
+            cursor: not-allowed;
+        }
+
+        .status {
+            display: none;
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .success {
+            display: block;
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .error {
+            display: block;
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="header">
+            <!-- Jika memiliki logo sekolah, ganti bagian ini dengan gambar -->
+            <!-- <img src="logo.png" class="logo"> -->
+
+            <h1>FORMULIR PENDAFTARAN</h1>
+
+            <p class="subtitle">
+                Ketua & Wakil Ketua OSIS<br>
+                <strong>SMAN 3 Tebas</strong><br>
+                Tahun Pelajaran 2026/2027
+            </p>
+        </div>
+
+        <form id="formPendaftaran">
+
+            <div class="section">
+                👤 Data Ketua OSIS
+            </div>
+
+            <label for="namaKetua">Nama Lengkap Ketua</label>
+            <input
+                type="text"
+                id="namaKetua"
+                name="namaKetua"
+                placeholder="Masukkan nama lengkap"
+                required
+            >
+
+            <label for="kelasKetua">Kelas Ketua</label>
+            <select id="kelasKetua" name="kelasKetua" required>
+                <option value="">-- Pilih Kelas --</option>
+                <option value="XI A">X A</option>
+                <option value="XI B">X B</option>
+                <option value="XI C">XI A</option>
+                <option value="XI D">XI B</option>
+            </select>
+
+            <label for="waKetua">Nomor WhatsApp Ketua</label>
+            <input
+                type="tel"
+                id="waKetua"
+                name="waKetua"
+                placeholder="Contoh: 081234567890"
+                required
+            >
+
+            <div class="section">
+                👥 Data Wakil Ketua OSIS
+            </div>
+
+            <label for="namaWakil">Nama Lengkap Wakil</label>
+            <input
+                type="text"
+                id="namaWakil"
+                name="namaWakil"
+                placeholder="Masukkan nama lengkap"
+                required
+            >
+
+            <label for="kelasWakil">Kelas Wakil</label>
+            <select id="kelasWakil" name="kelasWakil" required>
+                <option value="">-- Pilih Kelas --</option>
+                <option value="XI A">X A</option>
+                <option value="XI B">X B</option>
+                <option value="XI C">XI A</option>
+                <option value="XI D">XI B</option>
+            </select>
+
+            <label for="waWakil">Nomor WhatsApp Wakil</label>
+            <input
+                type="tel"
+                id="waWakil"
+                name="waWakil"
+                placeholder="Contoh: 081234567890"
+                required
+            >
+
+            <div class="section">
+                📝 Pernyataan Kesediaan
+            </div>
+
+            <label for="pernyataan">Pernyataan Kesediaan</label>
+
+            <textarea
+                id="pernyataan"
+                name="pernyataan"
+                placeholder="Tuliskan pernyataan kesediaan..."
+                required
+            ></textarea>
+
+            <label class="checkbox">
+                <input
+                    type="checkbox"
+                    id="setuju"
+                    required
+                >
+
+                <span>
+                    Kami menyatakan bersedia mengikuti seluruh proses
+                    pemilihan Ketua dan Wakil Ketua OSIS SMAN 3 Tebas
+                    Tahun Pelajaran 2026/2027 serta menaati ketentuan
+                    yang telah ditetapkan.
+                </span>
+            </label>
+
+            <button type="submit" id="submitBtn">
+                DAFTAR SEKARANG
+            </button>
+
+            <div id="status" class="status"></div>
+
+        </form>
+
+    </div>
+
+    <div class="footer">
+        © 2026 OSIS SMAN 3 Tebas
+    </div>
+
+</div>
+
+<script>
+
+const form = document.getElementById("formPendaftaran");
+const button = document.getElementById("submitBtn");
+const statusBox = document.getElementById("status");
+
+form.addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    button.disabled = true;
+    button.textContent = "Mengirim pendaftaran...";
+
+    statusBox.className = "status";
+    statusBox.textContent = "";
+
+    const data = {
+        namaKetua: document.getElementById("namaKetua").value.trim(),
+        kelasKetua: document.getElementById("kelasKetua").value,
+        waKetua: document.getElementById("waKetua").value.trim(),
+
+        namaWakil: document.getElementById("namaWakil").value.trim(),
+        kelasWakil: document.getElementById("kelasWakil").value,
+        waWakil: document.getElementById("waWakil").value.trim(),
+
+        pernyataan: document.getElementById("pernyataan").value.trim()
+    };
+
+    try {
+
+        const response = await fetch("/.netlify/functions/daftar-osis", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+
+            statusBox.className = "status success";
+            statusBox.textContent =
+                "✓ Pendaftaran berhasil dikirim!";
+
+            form.reset();
+
+        } else {
+
+            throw new Error(
+                result.message || "Pendaftaran gagal dikirim."
+            );
+
+        }
+
+    } catch (error) {
+
+        statusBox.className = "status error";
+        statusBox.textContent =
+            "✕ " + error.message;
+
+    }
+
+    button.disabled = false;
+    button.textContent = "DAFTAR SEKARANG";
+
+});
+
+</script>
+
+</body>
+</html>
